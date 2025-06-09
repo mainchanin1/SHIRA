@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="vi" style="color-scheme: light;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light">
+    <meta name="theme-color" content="#FAF8F5">
+    <meta name="forced-colors" content="none">
+    <title>Sạc Dự Phòng - Giải Pháp Sạc Di Động Thông Minh</title>
+    <meta name="description" content="Sạc dự phòng công nghệ cao, dung lượng lớn, sạc nhanh cho mọi thiết bị di động. Đảm bảo an toàn, tiết kiệm và tiện lợi.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="sacDuPhong.css">
+    <link rel="stylesheet" href="mobile.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="#" class="logo">
+                <img src="images/logo.jpg" alt="Logo">
+            </a>
+            <button class="mobile-menu-icon">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#features">Trang chủ</a></li>
+                    <li><a href="#specs">Tính năng</a></li>
+                    <li><a href="#benefits">Lợi Ích</a></li>
+                    <li><a href="#testimonials">Đánh Giá</a></li>
+                    <li><a href="#contact">Liên Hệ</a></li>
+                </ul>
+                <a href="#order" class="cta-button">Đặt Hàng Ngay</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-header">
+            <img src="images/logo.jpg" alt="Logo" class="mobile-logo">
+            <button class="mobile-menu-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav>
+            <ul class="mobile-nav-links">
+                <li><a href="#home"><i class="fas fa-home"></i> Trang chủ</a></li>
+                <li><a href="#about"><i class="fas fa-info-circle"></i> Giới thiệu</a></li>
+                <li><a href="#services"><i class="fas fa-cogs"></i> Dịch vụ</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> Liên hệ</a></li>
+            </ul>
+        </nav>
+        <a href="#contact" class="mobile-cta-button">Liên hệ ngay</a>
+    </div>
+    <div class="mobile-menu-overlay"></div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-bg-wrapper">
+                <!-- Sản phẩm nổi bật -->
+                                <div class="hero-image-container">
+                <img src="images/1.jfif" alt="Sạc dự phòng" class="hero-product-image" loading="lazy">
+                                </div>
+                <div class="hero-text">
+                    <h1 class="typewriter" data-text="Sạc Dự Phòng Thông Minh">Sạc Dự Phòng Thông Minh</h1>
+                    <p class="hero-description">
+                        Giải pháp sạc di động công nghệ cao, dung lượng lớn, sạc nhanh cho mọi thiết bị. 
+                        Đảm bảo an toàn, tiết kiệm và tiện lợi cho cuộc sống hiện đại.
+                    </p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number" data-value="20000">0</span>
+                            <span class="stat-label">mAh Dung Lượng</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-value="30">0</span>
+                            <span class="stat-label">Phút Sạc Nhanh</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-value="1000">0</span>
+                            <span class="stat-label">Khách Hàng Hài Lòng</span>
+                        </div>
+                    </div>
+                    <div class="hero-buttons">
+                        <a href="#order" class="primary-btn">Đặt Hàng Ngay</a>
+                        <a href="#features" class="secondary-btn">Tìm Hiểu Thêm</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="about-wrapper">
+            <h2 class="section-title">Về <span class="highlight">Sản Phẩm</span></h2>
+            <p class="section-description">
+                Sạc dự phòng của chúng tôi được thiết kế với công nghệ tiên tiến, 
+                mang đến trải nghiệm sạc nhanh và an toàn cho mọi thiết bị di động.
+            </p>
+            <div class="about-columns">
+                <div class="about-features">
+                    <div class="feature-item" data-aos="fade-right">
+                        <div class="feature-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h3>Sạc Nhanh 30W</h3>
+                            <p>Công nghệ sạc nhanh PD 3.0, sạc đầy điện thoại chỉ trong 30 phút</p>
+                        </div>
+                    </div>
+                    <div class="feature-item" data-aos="fade-right" data-aos-delay="100">
+                        <div class="feature-icon">
+                            <i class="fas fa-battery-full"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h3>Dung Lượng Lớn</h3>
+                            <p>20.000mAh, đủ sạc nhiều lần cho điện thoại và các thiết bị khác</p>
+                        </div>
+                    </div>
+                    <div class="feature-item" data-aos="fade-right" data-aos-delay="200">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h3>Bảo Vệ Toàn Diện</h3>
+                            <p>9 lớp bảo vệ chống quá tải, ngắn mạch và quá nhiệt</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-divider"></div>
+                <div class="about-image" data-aos="fade-left">
+                    <div class="image-overlay">
+                        <a href="#product-details" class="overlay-title">Chi tiết sản phẩm</a>
+                        <img src="images/pin-du-phong.jpg" alt="Sạc dự phòng" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Details Section -->
+    <section id="product-details" class="product-details-section">
+        <div class="about-wrapper">
+            <h2 class="section-title">Chi Tiết <span class="highlight">Sản Phẩm</span></h2>
+            <div class="about-columns reverse">
+                <div class="about-image" data-aos="fade-right">
+                    <div class="image-overlay">                        
+                        <img src="images/vn-11134208-7ra0g-m93stt06eao780.jfif" alt="Sạc dự phòng" loading="lazy">
+                    </div>
+                </div>
+                <div class="about-divider"></div>
+                <div class="about-features">
+                    <div class="feature-item" data-aos="fade-left">
+                        <div class="feature-icon">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h3>Mô Tả Sản Phẩm</h3>
+                            <p>Sạc dự phòng SHIRA 20000mAh là dòng sản phẩm công nghệ mới, thiết kế hiện đại, tích hợp đầy đủ các tính năng cần thiết cho người dùng thường xuyên di chuyển, học tập, làm việc hoặc đi du lịch.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item" data-aos="fade-left" data-aos-delay="100">
+                        <div class="feature-icon">
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h3>Công Nghệ Tiên Tiến</h3>
+                            <p>Công nghệ sạc nhanh PD 22.5W / QC 3.0, 4 dây sạc tích hợp (Type-C, Lightning, Micro USB, USB), 3 cổng vào và 2 cổng ra.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item" data-aos="fade-left" data-aos-delay="200">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h3>Tương Thích Rộng</h3>
+                            <p>Phù hợp với tất cả điện thoại, tai nghe, đồng hồ thông minh và các thiết bị khác. Kích thước nhỏ gọn: 145 x 68 x 25 mm, trọng lượng 380g.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technical Specifications -->
+            <div class="tech-specs" data-aos="fade-up">
+                <h3 class="specs-title">Thông Số Kỹ Thuật</h3>
+                <div class="specs-grid">
+                    <div class="spec-item">
+                        <i class="fas fa-tag"></i>
+                        <div class="spec-content">
+                            <h4>Tên sản phẩm</h4>
+                            <p>Sạc dự phòng SHIRA</p>
+                        </div>
+                    </div>
+                    <div class="spec-item">
+                        <i class="fas fa-battery-full"></i>
+                        <div class="spec-content">
+                            <h4>Dung lượng</h4>
+                            <p>10000/20000mAh</p>
+                        </div>
+                    </div>
+                    <div class="spec-item">
+                        <i class="fas fa-bolt"></i>
+                        <div class="spec-content">
+                            <h4>Công nghệ sạc nhanh</h4>
+                            <p>PD 22.5W / QC 3.0</p>
+                        </div>
+                    </div>
+                    <div class="spec-item">
+                        <i class="fas fa-plug"></i>
+                        <div class="spec-content">
+                            <h4>Số dây sạc</h4>
+                            <p>4 dây tích hợp sẵn (Type-C, Lightning, Micro USB, USB)</p>
+                        </div>
+                    </div>
+                    <div class="spec-item">
+                        <i class="fas fa-signal"></i>
+                        <div class="spec-content">
+                            <h4>Số cổng vào</h4>
+                            <p>3 (Micro.USB, Type-C)</p>
+                        </div>
+                    </div>
+                    <div class="spec-item">
+                        <i class="fas fa-signal"></i>
+                        <div class="spec-content">
+                            <h4>Số cổng ra</h4>
+                            <p>2 cổng USB + 4 dây sạc tích hợp</p>
+                        </div>
+                    </div>
+                    <div class="spec-item">
+                        <i class="fas fa-weight"></i>
+                        <div class="spec-content">
+                            <h4>Trọng lượng</h4>
+                            <p>Khoảng 380g</p>
+                        </div>
+                    </div>
+                    <div class="spec-item">
+                        <i class="fas fa-ruler-combined"></i>
+                        <div class="spec-content">
+                            <h4>Kích thước</h4>
+                            <p>145 x 68 x 25 mm</p>
+                        </div>
+                    </div>
+                    <div class="spec-item">
+                        <i class="fas fa-cube"></i>
+                        <div class="spec-content">
+                            <h4>Chất liệu</h4>
+                            <p>Nhựa ABS cao cấp</p>
+                        </div>
+                    </div>
+                    <div class="spec-item">
+                        <i class="fas fa-mobile-alt"></i>
+                        <div class="spec-content">
+                            <h4>Tương thích</h4>
+                            <p>Tất cả điện thoại, tai nghe, đồng hồ thông minh và các thiết bị khác</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Timeline -->
+    <section id="features" class="features-timeline">
+        <div class="container">
+            <h2 class="section-title">Tính Năng <span class="highlight">Nổi Bật</span></h2>
+            <div class="timeline-wrapper">
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Sạc Siêu Nhanh</h3>
+                        <p>Công nghệ Power Delivery 22.5W và QC 3.0 cho phép sạc nhanh, 
+                           giúp sạc đầy điện thoại chỉ trong thời gian ngắn.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="timeline-icon">
+                        <i class="fas fa-plug"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Đa Dạng Cổng Sạc</h3>
+                        <p>Hỗ trợ 4 dây sạc tích hợp (Type-C, Lightning, Micro USB, USB), 
+                           3 cổng vào và 2 cổng ra, tương thích với mọi thiết bị di động.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="timeline-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Màn Hình LED</h3>
+                        <p>Hiển thị chính xác mức pin còn lại, 
+                           giúp người dùng dễ dàng theo dõi.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Categories -->
+    <section id="categories" class="product-categories">
+        <div class="container">
+            <h2 class="section-title">Dòng <span class="highlight">Sản Phẩm</span></h2>
+            <div class="product-slider">
+                <div class="slider-container">                    
+                    <div class="product-grid">
+                        <div class="product-card" data-aos="fade-up">
+                            <div class="product-image">
+                                <img src="images/1.jfif" alt="Sạc dự phòng Mini" loading="lazy">
+                                <div class="product-tag">Mới</div>
+                            </div>
+                            <div class="product-info">
+                                <h3>Sạc Dự Phòng Mini</h3>
+                                <p class="product-description">
+                                    Thiết kế nhỏ gọn, dễ mang theo. Tích hợp 4 dây sạc, 
+                                    màn hình LED hiển thị pin, phù hợp cho điện thoại và máy tính bảng.
+                                </p>
+                                <div class="product-specs">
+                                    <div class="spec-item">
+                                        <i class="fas fa-battery-full"></i>
+                                        <span>20.000mAh</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <i class="fas fa-bolt"></i>
+                                        <span>PD 22.5W</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <i class="fas fa-plug"></i>
+                                        <span>4 dây sạc</span>
+                                    </div>
+                                </div>
+                                <a href="#order" class="product-btn">Đặt Hàng Ngay</a>
+                            </div>
+                        </div>
+
+                        <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+                            <div class="product-image">
+                                <img src="images/vn-11134207-7ra0g-m7nhaqlreq416b.webp" alt="Sạc dự phòng Pro" loading="lazy">
+                                <div class="product-tag">Bán Chạy</div>
+                            </div>
+                            <div class="product-info">
+                                <h3>Sạc Dự Phòng Pro</h3>
+                                <p class="product-description">
+                                    Công suất cao, sạc được laptop. Vỏ ngoài chắc chắn, 
+                                    bền đẹp, chịu lực tốt. Phù hợp cho công việc và du lịch.
+                                </p>
+                                <div class="product-specs">
+                                    <div class="spec-item">
+                                        <i class="fas fa-battery-full"></i>
+                                        <span>20.000mAh</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <i class="fas fa-bolt"></i>
+                                        <span>PD 22.5W</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <i class="fas fa-plug"></i>
+                                        <span>4 dây sạc</span>
+                                    </div>
+                                </div>
+                                <a href="#order" class="product-btn">Đặt Hàng Ngay</a>
+                            </div>
+                        </div>
+
+                        <div class="product-card" data-aos="fade-up" data-aos-delay="200">
+                            <div class="product-image">
+                                <img src="images/vn-11134208-7ra0g-m93stt06eao780.jfif" alt="Sạc dự phòng Solar" loading="lazy">
+                                <div class="product-tag">Đặc Biệt</div>
+                            </div>
+                            <div class="product-info">
+                                <h3>Sạc Dự Phòng Solar</h3>
+                                <p class="product-description">
+                                    Tích hợp tấm pin năng lượng mặt trời, sạc được bằng ánh nắng. 
+                                    Thiết kế chống nước, phù hợp cho dã ngoại và du lịch.
+                                </p>
+                                <div class="product-specs">
+                                    <div class="spec-item">
+                                        <i class="fas fa-battery-full"></i>
+                                        <span>20.000mAh</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <i class="fas fa-bolt"></i>
+                                        <span>PD 22.5W</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <i class="fas fa-plug"></i>
+                                        <span>4 dây sạc</span>
+                                    </div>
+                                </div>
+                                <a href="#order" class="product-btn">Đặt Hàng Ngay</a>
+                            </div>
+                        </div>
+
+                        <div class="product-card" data-aos="fade-up" data-aos-delay="300">
+                            <div class="product-image">
+                                <img src="images/vn-11134207-7ra0g-m7ur16ely1td15.jfif" alt="Tai nghe Bluetooth Pro" loading="lazy">
+                                <div class="product-tag">Mới</div>
+                            </div>
+                            <div class="product-info">
+                                <h3>Tai Nghe Bluetooth Pro</h3>
+                                <p class="product-description">
+                                    Tai nghe không dây cao cấp với công nghệ chống ồn chủ động, 
+                                    âm thanh sống động và thời lượng pin lên đến 30 giờ.
+                                </p>
+                                <div class="product-specs">
+                                    <div class="spec-item">
+                                        <i class="fas fa-headphones"></i>
+                                        <span>ANC</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <i class="fas fa-battery-full"></i>
+                                        <span>30h</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <i class="fas fa-bluetooth"></i>
+                                        <span>5.2</span>
+                                    </div>
+                                </div>
+                                <a href="#order" class="product-btn">Đặt Hàng Ngay</a>
+                            </div>
+                        </div>
+
+                        <div class="product-card" data-aos="fade-up" data-aos-delay="400">
+                            <div class="product-image">
+                                <img src="images/vn-11134207-7ra0g-m7ur16elv88z19.jfif" alt="Tai nghe Bluetooth Sport" loading="lazy">
+                                <div class="product-tag">Bán Chạy</div>
+                            </div>
+                            <div class="product-info">
+                                <h3>Tai Nghe Bluetooth Sport</h3>
+                                <p class="product-description">
+                                    Thiết kế chống nước IPX7, đeo vừa khít khi vận động. 
+                                    Âm thanh rõ ràng, thời lượng pin 8 giờ, sạc nhanh 10 phút.
+                                </p>
+                                <div class="product-specs">
+                                    <div class="spec-item">
+                                        <i class="fas fa-tint"></i>
+                                        <span>IPX7</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <i class="fas fa-battery-full"></i>
+                                        <span>8h</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <i class="fas fa-bolt"></i>
+                                        <span>Sạc nhanh</span>
+                                    </div>
+                                </div>
+                                <a href="#order" class="product-btn">Đặt Hàng Ngay</a>
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="benefits">
+        <div class="container">
+            <h2 class="section-title">Lợi Ích <span class="highlight">Vượt Trội</span></h2>
+            <div class="swiper benefits-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="benefit-card" data-aos="fade-up">
+                            <div class="benefit-icon">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h3>Sạc Nhanh Gấp 3 Lần</h3>
+                                <p>Công nghệ sạc nhanh PD 3.0 giúp sạc đầy điện thoại 
+                                   chỉ trong 30 phút, tiết kiệm thời gian.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="benefit-card" data-aos="fade-up" data-aos-delay="100">
+                            <div class="benefit-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h3>An Toàn Tuyệt Đối</h3>
+                                <p>9 lớp bảo vệ chống quá tải, ngắn mạch và quá nhiệt, 
+                                   đảm bảo an toàn cho thiết bị của bạn.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="benefit-card" data-aos="fade-up" data-aos-delay="200">
+                            <div class="benefit-icon">
+                                <i class="fas fa-sync"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h3>Sạc Đa Thiết Bị</h3>
+                                <p>Hỗ trợ sạc đồng thời nhiều thiết bị, 
+                                   phù hợp cho gia đình và văn phòng.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Policies Section -->
+    <section id="policies" class="policies">
+        <div class="container">
+            <h2 class="section-title">Chính Sách <span class="highlight">Bảo Hành</span></h2>
+            <div class="policies-grid">
+                <div class="policy-card" data-aos="fade-up">
+                    <div class="policy-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Chính Sách Bảo Hành</h3>
+                    <ul class="policy-list">
+                        <li>Bảo hành 1 đổi 1 trong vòng 6 tháng</li>
+                        <li>Sửa chữa có phí trong 6 tháng sau nếu sản phẩm bị lỗi kỹ thuật do nhà sản xuất</li>
+                        <li>Hỗ trợ kỹ thuật và tư vấn sử dụng sản phẩm trong suốt quá trình dùng</li>
+                        <li>Kiểm tra và đóng gói sản phẩm cẩn thận trước khi giao hàng</li>
+                    </ul>
+                </div>
+                <div class="policy-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="policy-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Cam Kết Từ Cửa Hàng</h3>
+                    <ul class="policy-list">
+                        <li>Sản phẩm đúng mô tả, giống hình ảnh, chất lượng đúng như thông tin công bố</li>
+                        <li>Giao hàng nhanh chóng, hỗ trợ đổi trả nếu phát sinh lỗi sản phẩm</li>
+                        <li>Tư vấn tận tâm, chăm sóc khách hàng chu đáo trước và sau bán hàng</li>
+                    </ul>
+                </div>
+                <div class="policy-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="policy-icon">
+                        <i class="fas fa-exclamation-circle"></i>
+                    </div>
+                    <h3>Lưu Ý Khi Sử Dụng</h3>
+                    <ul class="policy-list">
+                        <li>Vui lòng sạc đầy sạc dự phòng trước lần sử dụng đầu tiên để đảm bảo hiệu suất tốt nhất</li>
+                        <li>Không để sạc tiếp xúc với nước hoặc nhiệt độ cao trong thời gian dài</li>
+                        <li>Tránh va đập mạnh để đảm bảo tuổi thọ sản phẩm</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Guide Section -->
+    <section id="order-guide" class="order-guide">
+        <div class="container">
+            <h2 class="section-title">Hướng Dẫn <span class="highlight">Đặt Hàng</span></h2>
+            <div class="order-steps">
+                <div class="order-step" data-aos="fade-up">
+                    <div class="step-header">
+                        <div class="step-number">1</div>
+                        <div class="step-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <div class="step-header-content">
+                            <h4>Chọn Sản Phẩm</h4>
+                            <p>Lựa chọn sản phẩm phù hợp với nhu cầu</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-step" data-aos="fade-up" data-aos-delay="100">
+                    <div class="step-header">
+                        <div class="step-number">2</div>
+                        <div class="step-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="step-header-content">
+                            <h4>Liên Hệ Đặt Hàng</h4>
+                            <p>Gọi điện hoặc nhắn tin để đặt hàng</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-step" data-aos="fade-up" data-aos-delay="200">
+                    <div class="step-header">
+                        <div class="step-number">3</div>
+                        <div class="step-icon">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <div class="step-header-content">
+                            <h4>Nhận Hàng</h4>
+                            <p>Nhận hàng và thanh toán tại nhà</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="site-footer__container container">
+            <div class="site-footer__section site-footer__about">
+                <h3 class="site-footer__heading">Về chúng tôi</h3>
+                <div class="site-footer__section-content">
+                    <p>Chúng tôi cung cấp các giải pháp sạc dự phòng tiên tiến, giúp bạn luôn kết nối mọi lúc, mọi nơi. Với công nghệ hiện đại và thiết kế tinh tế, sản phẩm của chúng tôi mang lại trải nghiệm sạc tối ưu và an toàn.</p>
+                    <div class="site-footer__social-links">
+                        <a href="#" class="site-footer__social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="site-footer__social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="site-footer__social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="site-footer__social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="site-footer__section site-footer__links">
+                <h3 class="site-footer__heading">Liên kết nhanh</h3>
+                <div class="site-footer__section-content">
+                    <ul class="site-footer__list">
+                        <li><a href="#home" class="site-footer__link">Trang chủ</a></li>
+                        <li><a href="#features" class="site-footer__link">Tính năng</a></li>
+                        <li><a href="#benefits" class="site-footer__link">Lợi ích</a></li>
+                        <li><a href="#testimonials" class="site-footer__link">Đánh giá</a></li>
+                        <li><a href="#faq" class="site-footer__link">Câu hỏi thường gặp</a></li>
+                        <li><a href="#contact" class="site-footer__link">Liên hệ</a></li>
+                    </ul>
+                </div>
+            </div>
+    
+            <div class="site-footer__section site-footer__contact-info">
+                <h3 class="site-footer__heading">Liên hệ chúng tôi</h3>
+                <div class="site-footer__section-content">
+                    <ul class="site-footer__list site-footer__contact-list">
+                        <li><p><i class="fas fa-map-marker-alt"></i> 123 Đường ABC, Quận XYZ, TP. Hồ Chí Minh</p></li>
+                        <li><p><i class="fas fa-phone"></i> +84 987 654 321</p></li>
+                        <li><p><i class="fas fa-envelope"></i> support@tencongty.com</p></li>
+                        <li><p><i class="fas fa-clock"></i> Mon - Sat: 9:00 AM - 6:00 PM</p></li>
+                    </ul>
+                </div>
+            </div>
+    
+            <div class="site-footer__section site-footer__newsletter">
+                <h3 class="site-footer__heading">Đăng ký nhận tin</h3>
+                <div class="site-footer__section-content">
+                    <p>Nhận các ưu đãi và cập nhật mới nhất từ chúng tôi.</p>
+                    <form class="site-footer__newsletter-form">
+                        <input type="email" placeholder="Nhập email của bạn" required>
+                        <button type="submit" class="btn btn-primary">Đăng ký</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    
+        <div class="site-footer__bottom">
+            <p>&copy; 2025 Tên Công Ty Của Bạn. Tất cả quyền được bảo lưu.</p>
+            <p>Thiết kế bởi: <a href="https://yourwebsite.com" target="_blank" rel="noopener noreferrer">YourName</a></p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="sacDuPhong.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="mobile-menu.js"></script>
+</body>
+</html> 
