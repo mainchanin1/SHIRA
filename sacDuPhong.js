@@ -1,3 +1,8 @@
+document.querySelector('.mobile-menu-icon').addEventListener('click', () => {
+    document.querySelector('.mobile-sidebar').classList.add('active');
+    document.querySelector('.sidebar-overlay').classList.add('active');
+});
+
 // Force light mode
 function forceLightMode() {
     document.documentElement.classList.add('light-mode');
@@ -7,46 +12,45 @@ function forceLightMode() {
 }
 
 // Apply light mode on load and when system changes
-document.addEventListener('DOMContentLoaded', () => {
-    forceLightMode();
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', forceLightMode);
-});
+document.addEventListener("DOMContentLoaded", () => {
+    const mobileMenuIcon = document.querySelector(".mobile-menu-icon");
+    const navLinks = document.querySelector(".nav-links");
 
-// Mobile Menu
-const mobileMenuIcon = document.querySelector('.mobile-menu-icon');
-const mobileMenu = document.querySelector('.mobile-menu');
-const mobileMenuClose = document.querySelector('.mobile-menu-close');
-const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
-const navLinks = document.querySelectorAll('.nav-links a');
-
-function toggleMobileMenu() {
-    mobileMenu.classList.toggle('active');
-    mobileMenuOverlay.classList.toggle('active');
-    document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
-    
-    // Toggle aria-expanded for accessibility
-    const isExpanded = mobileMenu.classList.contains('active');
-    mobileMenuIcon.setAttribute('aria-expanded', isExpanded);
-}
-
-// Add event listeners for mobile menu
-mobileMenuIcon?.addEventListener('click', toggleMobileMenu);
-mobileMenuClose?.addEventListener('click', toggleMobileMenu);
-mobileMenuOverlay?.addEventListener('click', toggleMobileMenu);
-
-// Close mobile menu when clicking on a nav link
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        if (mobileMenu.classList.contains('active')) {
-            toggleMobileMenu();
-        }
+    mobileMenuIcon.addEventListener("click", () => {
+        navLinks.classList.toggle("hidden");
     });
 });
 
-// Close mobile menu on window resize if open
-window.addEventListener('resize', () => {
-    if (window.innerWidth > 992 && mobileMenu.classList.contains('active')) {
-        toggleMobileMenu();
+// Mobile Menu
+function toggleMobileMenu() {
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const menuOverlay = document.querySelector('.menu-overlay');
+    const menuToggle = document.querySelector('.mobile-menu-icon');
+    
+    if (mobileMenu && menuOverlay && menuToggle) {
+        mobileMenu.classList.toggle('active');
+        menuOverlay.classList.toggle('active');
+        menuToggle.classList.toggle('active');
+        document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+    }
+}
+
+// Initialize mobile menu
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.mobile-menu-icon');
+    const menuOverlay = document.querySelector('.menu-overlay');
+    const mobileMenuClose = document.querySelector('.mobile-menu-close');
+    
+    if (menuToggle) {
+        menuToggle.addEventListener('click', toggleMobileMenu);
+    }
+    
+    if (menuOverlay) {
+        menuOverlay.addEventListener('click', toggleMobileMenu);
+    }
+    
+    if (mobileMenuClose) {
+        mobileMenuClose.addEventListener('click', toggleMobileMenu);
     }
 });
 
@@ -484,6 +488,81 @@ document.addEventListener('DOMContentLoaded', function() {
             link.addEventListener('click', closeMobileMenu);
         });
     }
+
+    // Xử lý header
+    const headerSection = document.querySelector('.header__section');
+    const headerHeading = document.querySelector('.header__heading');
+    const headerContent = document.querySelector('.header__section-content');
+
+    if (headerHeading && headerContent) {
+        headerHeading.addEventListener('click', function() {
+            headerSection.classList.toggle('active');
+            if (headerSection.classList.contains('active')) {
+                headerContent.style.display = 'flex';
+            } else {
+                headerContent.style.display = 'none';
+            }
+        });
+
+        // Kiểm tra kích thước màn hình ban đầu
+        if (window.innerWidth > 992) {
+            headerContent.style.display = 'flex';
+        } else {
+            headerContent.style.display = 'none';
+        }
+    }
+
+    // Xử lý footer
+    const footerSections = document.querySelectorAll('.site-footer__section');
+    
+    footerSections.forEach(section => {
+        const heading = section.querySelector('.site-footer__heading');
+        const content = section.querySelector('.site-footer__section-content');
+        
+        if (heading && content) {
+            heading.addEventListener('click', function() {
+                section.classList.toggle('active');
+                if (section.classList.contains('active')) {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                } else {
+                    content.style.maxHeight = '0';
+                }
+            });
+
+            // Kiểm tra kích thước màn hình ban đầu
+            if (window.innerWidth > 992) {
+                content.style.maxHeight = 'none';
+            } else {
+                content.style.maxHeight = '0';
+            }
+        }
+    });
+
+    // Xử lý resize window
+    window.addEventListener('resize', function() {
+        // Xử lý header
+        if (headerContent) {
+            if (window.innerWidth > 992) {
+                headerContent.style.display = 'flex';
+            } else if (!headerSection.classList.contains('active')) {
+                headerContent.style.display = 'none';
+            }
+        }
+
+        // Xử lý footer
+        footerSections.forEach(section => {
+            const content = section.querySelector('.site-footer__section-content');
+            if (content) {
+                if (window.innerWidth > 992) {
+                    content.style.maxHeight = 'none';
+                } else if (section.classList.contains('active')) {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                } else {
+                    content.style.maxHeight = '0';
+                }
+            }
+        });
+    });
 });
 
 // Product Slider
@@ -569,79 +648,6 @@ document.addEventListener('DOMContentLoaded', function() {
         if (e.key === 'Escape' && nav.classList.contains('active')) {
             toggleMobileMenu();
         }
-    });
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-    // ... (Giữ nguyên các script đã có của bạn, ví dụ: AOS.init, showContent function, header scroll, mobile menu) ...
-
-    /* --- Xử lý Accordion cho Footer Sections (chỉ trên Mobile) --- */
-    const footerSections = document.querySelectorAll('.site-footer__section');
-    const breakpoint = 992;
-
-    function setupFooterAccordion() {
-        footerSections.forEach(section => {
-            const heading = section.querySelector('.site-footer__heading');
-            let toggleButton = section.querySelector('.site-footer__section-toggle');
-            const contentWrapper = section.querySelector('.site-footer__section-content');
-
-            if (!heading || !contentWrapper) return;
-
-            if (window.innerWidth <= breakpoint) {
-                if (!toggleButton) {
-                    toggleButton = document.createElement('button');
-                    toggleButton.classList.add('site-footer__section-toggle');
-                    toggleButton.innerHTML = `<i class="fas fa-chevron-down"></i>`;
-                    heading.parentNode.insertBefore(toggleButton, heading);
-                    
-                    toggleButton.addEventListener('click', function() {
-                        contentWrapper.classList.toggle('active');
-                        toggleButton.classList.toggle('active');
-
-                        if (contentWrapper.classList.contains('active')) {
-                            contentWrapper.style.height = contentWrapper.scrollHeight + 'px';
-                            contentWrapper.style.opacity = '1';
-                            contentWrapper.style.overflow = 'visible';
-                        } else {
-                            contentWrapper.style.height = '0';
-                            contentWrapper.style.opacity = '0';
-                            contentWrapper.style.overflow = 'hidden';
-                        }
-                    });
-                }
-                toggleButton.style.display = 'flex';
-                heading.style.display = 'block';
-
-                contentWrapper.classList.remove('active');
-                toggleButton.classList.remove('active');
-                contentWrapper.style.height = '0';
-                contentWrapper.style.opacity = '0';
-                contentWrapper.style.overflow = 'hidden';
-
-            } else {
-                if (toggleButton) {
-                    toggleButton.style.display = 'none';
-                    toggleButton.classList.remove('active');
-                }
-                heading.style.display = 'block';
-
-                contentWrapper.classList.add('active');
-                contentWrapper.style.height = 'auto';
-                contentWrapper.style.opacity = '1';
-                contentWrapper.style.overflow = 'visible';
-            }
-        });
-    }
-
-    setupFooterAccordion();
-
-    let resizeTimer;
-    window.addEventListener('resize', () => {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(() => {
-            setupFooterAccordion();
-            AOS.refreshHard();
-        }, 250);
     });
 });
 

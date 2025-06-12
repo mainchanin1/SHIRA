@@ -28,51 +28,38 @@
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="sacDuPhong.css">
-    <link rel="stylesheet" href="mobile.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
     <!-- Header -->
     <header class="header">
-        <div class="container">
-            <a href="#" class="logo">
-                <img src="images/logo.jpg" alt="Logo">
-            </a>
-            <button class="mobile-menu-icon">
-                <i class="fas fa-bars"></i>
-            </button>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#features">Trang chủ</a></li>
-                    <li><a href="#specs">Tính năng</a></li>
-                    <li><a href="#benefits">Lợi Ích</a></li>
-                    <li><a href="#testimonials">Đánh Giá</a></li>
-                    <li><a href="#contact">Liên Hệ</a></li>
-                </ul>
-                <a href="#order" class="cta-button">Đặt Hàng Ngay</a>
-            </nav>
-        </div>
+        <header class="header">
+            <div class="container">
+                <nav class="nav">
+                    <div class="logo">
+                        <img src="images/logo.jpg" alt="HUAWEI Logo">
+                    </div>
+                    <ul class="nav-links hidden">
+                        <li><a href="#specs">Trang chủ</a></li>
+                        <li><a href="#features">Tính năng</a></li>
+                        <li><a href="#gallery">Lợi ích</a></li>
+                        <li><a href="#lali">Đánh giá</a></li>
+                        <li><a href="#contact">Liên hệ</a></li>
+                    </ul>
+                    <div class="nav-buttons">                    
+                        <button class="menu-toggle">
+                            <a href="https://elogi.vn/huawei-mate-xt-ultimate-384" class="buy-button">Mua ngay</a>
+                        </button>
+                    </div>                
+                    <div class="mobile-menu-icon">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </nav>
+            </div>
+        </header>
     </header>
 
-    <!-- Mobile Menu -->
-    <div class="mobile-menu">
-        <div class="mobile-menu-header">
-            <img src="images/logo.jpg" alt="Logo" class="mobile-logo">
-            <button class="mobile-menu-close">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        <nav>
-            <ul class="mobile-nav-links">
-                <li><a href="#home"><i class="fas fa-home"></i> Trang chủ</a></li>
-                <li><a href="#about"><i class="fas fa-info-circle"></i> Giới thiệu</a></li>
-                <li><a href="#services"><i class="fas fa-cogs"></i> Dịch vụ</a></li>
-                <li><a href="#contact"><i class="fas fa-envelope"></i> Liên hệ</a></li>
-            </ul>
-        </nav>
-        <a href="#contact" class="mobile-cta-button">Liên hệ ngay</a>
-    </div>
-    <div class="mobile-menu-overlay"></div>
+
 
     <section class="hero">
         <div class="hero-content">
@@ -232,7 +219,7 @@
                         <i class="fas fa-plug"></i>
                         <div class="spec-content">
                             <h4>Số dây sạc</h4>
-                            <p>4 dây tích hợp sẵn (Type-C, Lightning, Micro USB, USB)</p>
+                            <p>4 dây tích hợp sẵn <br>(Type-C, Lightning, Micro USB, USB)</p>
                         </div>
                     </div>
                     <div class="spec-item">
@@ -274,7 +261,7 @@
                         <i class="fas fa-mobile-alt"></i>
                         <div class="spec-content">
                             <h4>Tương thích</h4>
-                            <p>Tất cả điện thoại, tai nghe, đồng hồ thông minh và các thiết bị khác</p>
+                            <p>Tất cả điện thoại, tai nghe, đồng <br>hồ thông minh và các thiết bị khác</p>
                         </div>
                     </div>
                 </div>
@@ -617,20 +604,14 @@
     <!-- Footer -->
     <footer class="site-footer">
         <div class="site-footer__container container">
-            <div class="site-footer__section site-footer__about">
+            <div class="site-footer__section">
                 <h3 class="site-footer__heading">Về chúng tôi</h3>
                 <div class="site-footer__section-content">
-                    <p>Chúng tôi cung cấp các giải pháp sạc dự phòng tiên tiến, giúp bạn luôn kết nối mọi lúc, mọi nơi. Với công nghệ hiện đại và thiết kế tinh tế, sản phẩm của chúng tôi mang lại trải nghiệm sạc tối ưu và an toàn.</p>
-                    <div class="site-footer__social-links">
-                        <a href="#" class="site-footer__social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="site-footer__social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="site-footer__social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="site-footer__social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
+                    <p>Chúng tôi cung cấp các giải pháp sạc dự phòng tiên tiến, giúp bạn luôn kết nối mọi lúc, mọi nơi. Với công nghệ hiện đại và thiết kế tinh tế, sản phẩm của chúng tôi mang lại trải nghiệm sạc tối ưu và an toàn.</p>                    
                 </div>
             </div>
     
-            <div class="site-footer__section site-footer__links">
+            <div class="site-footer__section">
                 <h3 class="site-footer__heading">Liên kết nhanh</h3>
                 <div class="site-footer__section-content">
                     <ul class="site-footer__list">
@@ -644,7 +625,7 @@
                 </div>
             </div>
     
-            <div class="site-footer__section site-footer__contact-info">
+            <div class="site-footer__section">
                 <h3 class="site-footer__heading">Liên hệ chúng tôi</h3>
                 <div class="site-footer__section-content">
                     <ul class="site-footer__list site-footer__contact-list">
@@ -653,10 +634,16 @@
                         <li><p><i class="fas fa-envelope"></i> support@tencongty.com</p></li>
                         <li><p><i class="fas fa-clock"></i> Mon - Sat: 9:00 AM - 6:00 PM</p></li>
                     </ul>
+                    <div class="site-footer__social-links">
+                        <a href="#" class="site-footer__social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="site-footer__social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="site-footer__social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="site-footer__social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
                 </div>
             </div>
     
-            <div class="site-footer__section site-footer__newsletter">
+            <div class="site-footer__section">
                 <h3 class="site-footer__heading">Đăng ký nhận tin</h3>
                 <div class="site-footer__section-content">
                     <p>Nhận các ưu đãi và cập nhật mới nhất từ chúng tôi.</p>
@@ -677,8 +664,54 @@
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script src="sacDuPhong.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="mobile-menu.js"></script>
+    <script src="sacDuPhong.js"></script>
+    <script>
+        // Footer Accordion
+        document.addEventListener('DOMContentLoaded', function() {
+            const footerSections = document.querySelectorAll('.site-footer__section');
+            
+            footerSections.forEach(section => {
+                const heading = section.querySelector('.site-footer__heading');
+                const content = section.querySelector('.site-footer__section-content');
+                
+                if (heading && content) {
+                    // Set initial state for mobile
+                    if (window.innerWidth <= 992) {
+                        content.style.maxHeight = '0';
+                    }
+                    
+                    // Add click event to heading
+                    heading.addEventListener('click', () => {
+                        // Toggle active class on section
+                        section.classList.toggle('active');
+                        
+                        // Toggle content visibility
+                        if (section.classList.contains('active')) {
+                            content.style.maxHeight = content.scrollHeight + 'px';
+                        } else {
+                            content.style.maxHeight = '0';
+                        }
+                    });
+                }
+            });
+            
+            // Handle window resize
+            window.addEventListener('resize', () => {
+                footerSections.forEach(section => {
+                    const content = section.querySelector('.site-footer__section-content');
+                    if (content) {
+                        if (window.innerWidth <= 992) {
+                            if (!section.classList.contains('active')) {
+                                content.style.maxHeight = '0';
+                            }
+                        } else {
+                            content.style.maxHeight = 'none';
+                        }
+                    }
+                });
+            });
+        });
+    </script>
 </body>
-</html> 
+</html>

@@ -9,6 +9,8 @@
 
 /* CSS Variables */
 :root {
+    --bg-gradient: linear-gradient(90deg, #e2dcde, #5d60f5);
+    --hover-bg-gradient: linear-gradient(90deg, #eaeff1, #e3eaee);
     --primary-color: #6C63FF;
     --secondary-color: #4ECDC4;
     --accent-color: #FF6B6B;
@@ -102,72 +104,53 @@ a:hover {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 2px 10px var(--shadow-color);
     z-index: 1000;
+    background: rgba(252, 250, 250, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     transition: all 0.3s ease;
 }
 
-.header.hidden {
-    transform: translateY(-100%);
+.header.scrolled {
+    background: rgba(248, 246, 246, 0.95);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
 }
 
-.header .container {
+.nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
+    padding: 20px 0;
 }
 
 .logo img {
-    height: 45px;
+    height: 40px;
     width: auto;
-    transition: transform 0.3s ease;
-}
-
-.logo:hover img {
-    transform: scale(1.05);
-}
-
-nav {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
 }
 
 .nav-links {
     display: flex;
-    gap: 2rem;
+    gap: 40px;
     list-style: none;
-    margin: 0;
-    padding: 0;
 }
 
 .nav-links a {
     color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.1rem;
     font-weight: 500;
-    font-size: 1rem;
-    position: relative;
-    padding: 0.5rem 0;
     transition: color 0.3s ease;
+    position: relative;
 }
 
 .nav-links a::after {
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: -5px;
     left: 0;
     width: 0;
     height: 2px;
-    background-color: var(--primary-color);
+    background: var(--bg-gradient);
     transition: width 0.3s ease;
 }
 
@@ -179,37 +162,110 @@ nav {
     width: 100%;
 }
 
-.cta-button {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: white;
-    padding: 0.8rem 1.8rem;
-    border-radius: 25px;
+/* Default menu visibility */
+.nav-links {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+/* Hide menu and show mobile menu icon for smaller screens */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide menu */
+    }
+
+    .nav-links.hidden {
+        display: flex; /* Show menu when toggled */
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .mobile-menu-icon {
+        display: block; /* Show mobile menu icon */
+        cursor: pointer;
+        font-size: 24px;
+    }
+}
+
+/* Styling for the nav-buttons container */
+.nav-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+/* Styling for the button inside nav-buttons */
+.menu-toggle {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.menu-toggle:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    transition: transform 0.3s ease;
+}
+
+/* Styling for the buy-button link */
+.buy-button {
+    padding: 12px 30px;
+    background: var(--bg-gradient); /* Use your gradient variable */
+    color: var(--text-color); /* Use your text color variable */
+    text-decoration: none;
+    border-radius: 30px;
     font-weight: 600;
     transition: all 0.3s ease;
-    border: none;
-    cursor: pointer;
-    box-shadow: 0 4px 15px rgba(108, 99, 255, 0.2);
+    display: inline-block;
 }
 
-.cta-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(108, 99, 255, 0.3);
-    color: white;
+.buy-button:hover {
+    box-shadow: 0 5px 15px rgba(255, 65, 108, 0.4); /* Add shadow effect */
+    background: var(--hover-bg-gradient); /* Optional hover background */
 }
 
-.mobile-menu-icon {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
+/* Ensure mobile menu icon is hidden for larger screens */
+@media screen and (min-width: 769px) {
+    .mobile-menu-icon {
+        display: none;
+    }
+}
+
+.buy-button {
+    padding: 12px 30px;
+    background: var(--bg-gradient);
     color: var(--text-color);
-    cursor: pointer;
-    padding: 0.5rem;
-    transition: color 0.3s ease;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
-.mobile-menu-icon:hover {
-    color: var(--primary-color);
+.buy-button:hover {
+    box-shadow: 0 5px 15px rgba(255, 65, 108, 0.4);
+}
+
+
+/* Overlay for mobile menu */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
 }
 
 /* Mobile Menu */
@@ -1458,6 +1514,20 @@ nav {
     transform: translateY(-2px);
 }
 
+.mobile-menu-icon {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.mobile-menu-icon:hover {
+    background: rgba(35, 83, 71, 0.1);
+}
+
 @media screen and (min-width: 769px) {
     .footer-heading::after {
         display: none;
@@ -1572,6 +1642,37 @@ nav {
 
     .footer-content {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .header__heading {
+        display: block;
+    }
+
+    .header__section-content {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem 0;
+    }
+
+    .header__section.active .header__section-content {
+        display: flex;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    .nav-buttons {
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .cta-button {
+        width: 100%;
+        text-align: center;
     }
 }
 
@@ -2081,57 +2182,92 @@ nav {
 
 /* Footer */
 .site-footer {
-    background-color: var(--text-color);
-    color: white;
-    padding: 4rem 1rem 2rem;
+    background: #1a1a2e;
+    color: #fff;
+    padding: 60px 0 20px;
+    position: relative;
+}
+
+.site-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
 }
 
 .site-footer__container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 3rem;
-    max-width: 1200px;
-    margin: 0 auto;
+    gap: 40px;
+    margin-bottom: 40px;
 }
 
 .site-footer__section {
-    display: flex;
-    flex-direction: column;
+    margin-bottom: 30px;
 }
 
 .site-footer__heading {
-    font-size: 1.3rem;
-    margin-bottom: 1.5rem;
-    color: white;
+    font-size: 1.2rem;
     font-weight: 600;
+    margin-bottom: 20px;
+    position: relative;
+    cursor: pointer;
+    padding-right: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-footer__heading::after {
+    content: '\f107';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease;
+}
+
+.site-footer__section.active .site-footer__heading::after {
+    transform: rotate(180deg);
+}
+
+.site-footer__section-content {
+    overflow: hidden;
+    transition: max-height 0.3s ease;
 }
 
 .site-footer__about p {
+    margin-bottom: 20px;
+    line-height: 1.6;
     color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 1.5rem;
 }
 
 .site-footer__social-links {
     display: flex;
-    gap: 1rem;
-    margin-top: auto; /* Đẩy social links xuống cuối */
+    gap: 15px;
+    margin-top: 20px;
 }
 
 .site-footer__social-icon {
     width: 40px;
     height: 40px;
-    background-color: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
-    font-size: 1.2rem;
+    color: #fff;
+    text-decoration: none;
     transition: all 0.3s ease;
 }
 
 .site-footer__social-icon:hover {
-    background-color: var(--primary-color);
+    background: var(--primary-color);
     transform: translateY(-3px);
 }
 
@@ -2142,34 +2278,35 @@ nav {
 }
 
 .site-footer__list li {
-    margin-bottom: 0.8rem;
+    margin-bottom: 12px;
 }
 
 .site-footer__link {
     color: rgba(255, 255, 255, 0.8);
-    transition: color 0.3s ease;
-    display: block;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
 }
 
 .site-footer__link:hover {
     color: var(--primary-color);
+    transform: translateX(5px);
 }
 
-.site-footer__contact-list li p {
-    color: rgba(255, 255, 255, 0.8);
+.site-footer__contact-list li {
     display: flex;
     align-items: center;
     gap: 10px;
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .site-footer__contact-list i {
     color: var(--primary-color);
-    font-size: 1.2rem;
 }
 
 .site-footer__newsletter p {
+    margin-bottom: 20px;
     color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 1rem;
 }
 
 .site-footer__newsletter-form {
@@ -2178,157 +2315,87 @@ nav {
 }
 
 .site-footer__newsletter-form input {
-    flex-grow: 1;
-    padding: 0.8rem 1rem;
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
     border-radius: 5px;
-    border: none;
-    background-color: rgba(255, 255, 255, 0.9);
-    color: var(--text-dark);
+    color: #fff;
 }
 
 .site-footer__newsletter-form button {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 0.8rem 1.5rem;
-    border-radius: 5px;
+    padding: 12px 25px;
+    background: var(--primary-color);
     border: none;
+    border-radius: 5px;
+    color: #fff;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
 .site-footer__newsletter-form button:hover {
-    background-color: var(--secondary-color);
+    background: var(--primary-color-dark);
 }
 
 .site-footer__bottom {
     text-align: center;
-    padding-top: 2rem;
-    margin-top: 3rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .site-footer__bottom p {
     color: rgba(255, 255, 255, 0.6);
-    margin-bottom: 0.5rem;
-    font-size: 0.9rem;
+    margin-bottom: 10px;
 }
 
 .site-footer__bottom a {
-    color: rgba(255, 255, 255, 0.6);
-    transition: color 0.3s ease;
+    color: var(--primary-color);
+    text-decoration: none;
 }
 
 .site-footer__bottom a:hover {
-    color: var(--primary-color);
+    text-decoration: underline;
 }
-
-/* --- Responsive & Accordion (Menu ẩn) cho Footer --- */
-
-/* Nút toggle: Mặc định ẩn trên desktop, sẽ được hiển thị bằng JS/media query trên mobile */
-.site-footer__section-toggle {
-    display: none; /* Ẩn mặc định, chỉ hiện trên mobile */
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1.2rem;
-    cursor: pointer;
-    padding: 10px 0;
-    width: 100%;
-    text-align: left;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    margin-bottom: 1rem;
-}
-
-.site-footer__section-toggle i {
-    transition: transform 0.3s ease;
-}
-
-.site-footer__section-toggle.active i {
-    transform: rotate(180deg);
-}
-
-/* Nội dung của section: Mặc định hiển thị trên desktop */
-.site-footer__section-content {
-    opacity: 1;
-    height: auto;
-    overflow: visible;
-    display: block;
-    transition: opacity 0.4s ease-out, height 0.4s ease-out;
-}
-
-/* Điều chỉnh lại khoảng cách dưới các tiêu đề khi menu ẩn */
-.site-footer__section.active .site-footer__heading {
-    margin-bottom: 1rem;
-}
-
-/* --- Media Queries cho Responsive --- */
 
 @media (max-width: 992px) {
     .site-footer__container {
         grid-template-columns: 1fr;
-        text-align: left;
-        gap: 0;
+        gap: 30px;
     }
 
     .site-footer__section {
-        padding-bottom: 1.5rem;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        margin-bottom: 1.5rem;
+        padding-bottom: 20px;
     }
 
-    .site-footer__section:last-of-type {
+    .site-footer__section:last-child {
         border-bottom: none;
-        margin-bottom: 0;
     }
 
-    /* Trên mobile, hiển thị nút toggle */
-    .site-footer__section-toggle {
-        display: flex;
-    }
-
-    /* Trên mobile, giữ tiêu đề gốc */
     .site-footer__heading {
-        display: block;
-        margin-bottom: 0.5rem;
+        margin-bottom: 15px;
     }
 
-    /* Trên mobile, nội dung sẽ bị ẩn theo mặc định (trừ khi active) */
     .site-footer__section-content {
-        height: 0;
-        opacity: 0;
-        overflow: hidden;
-        display: block;
-    }
-    
-    /* Khi section active trên mobile, hiển thị nội dung */
-    .site-footer__section-content.active {
-        height: auto;
-        opacity: 1;
-        overflow: visible;
+        max-height: 0;
     }
 
-    /* Đảm bảo các flexbox trong content vẫn hoạt động đúng */
-    .site-footer__section-content.active .site-footer__social-links,
-    .site-footer__section-content.active .site-footer__newsletter-form {
-        display: flex;
+    .site-footer__section.active .site-footer__section-content {
+        max-height: 1000px;
     }
 
-    .site-footer__about p {
-        margin-bottom: 1rem;
+    .site-footer__newsletter-form {
+        flex-direction: column;
     }
 
-    .site-footer__bottom {
-        padding-top: 1.5rem;
-        margin-top: 2rem;
+    .site-footer__newsletter-form button {
+        width: 100%;
     }
 }
 
 @media (max-width: 480px) {
     .site-footer {
-        padding: 2.5rem 1rem 1.5rem;
+        padding: 40px 0 20px;
     }
 
     .site-footer__newsletter-form {
@@ -2337,7 +2404,6 @@ nav {
 
     .site-footer__newsletter-form input {
         width: 100%;
-        margin-bottom: 10px;
     }
 
     .site-footer__newsletter-form button {
